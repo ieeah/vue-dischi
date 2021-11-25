@@ -15,6 +15,7 @@ export default {
     header {
         background-color: $secondary-color;
         padding: 7px;
+        width: 100vw;
     }
 
     .brand_logo {

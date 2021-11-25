@@ -1,18 +1,21 @@
 <template>
-    <div class="albums_container">
+    <div v-if="storedAlbums" class="albums_container">
         <Albumcard v-for="(album, i) in storedAlbums" :key="`album_${i}`"
             :poster="album.poster" :title="album.title" :subTitle="album.author" :year="album.year" :genre="album.genre"
         />
     </div>
+    <Loader v-else />
 </template>
 
 <script>
 import Albumcard from '@/components/Albumcard.vue';
+import Loader from '@/components/Loader.vue';
 import axios from 'axios';
 export default {
     name: 'Albums',
     components: {
         Albumcard,
+        Loader,
     },
     data() {
         return {
@@ -23,9 +26,10 @@ export default {
         this.getAlbums();
     },
     methods: {
+
         getAlbums() {
-            axios.get('https://flynn.boolean.careers/exercises/api/array/music').then( response => {
-                this.storedAlbums = response.data.response;
+            axios.get('https://flynn.boolean.careers/exercises/api/array/music').then(received => {
+                this.storedAlbums = received.data.response;
             });
         },
     },
@@ -38,6 +42,8 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     padding: 110px 70px;
+    height: calc(100vh - 66px);
+    width: 100vw;
 }
 
 </style>
