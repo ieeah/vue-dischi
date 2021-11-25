@@ -23,7 +23,7 @@ export default {
         };
     },
     created() {
-        this.getAlbums();
+        // this.getAlbums();
     },
     methods: {
 
