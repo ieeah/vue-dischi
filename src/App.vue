@@ -15,9 +15,11 @@ export default {
     Header,
     Albums,
   },
+  props: {
+  },
   data() {
     return {
-      storedAlbums: '',
+      storedAlbums: null,
       albumsToShow: '',
     };
   },
@@ -33,7 +35,7 @@ export default {
         },
 
         filterAlbums(selectedGenre) {
-          if(selectedGenre === '') {
+          if(selectedGenre === 'All' || selectedGenre === '') {
             this.albumsToShow = this.storedAlbums;
           } else {
             this.albumsToShow = this.storedAlbums.filter(album => album.genre === selectedGenre);

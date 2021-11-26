@@ -4,7 +4,7 @@
 
         <form action="">
             <select v-model="selectedGenre" @change="$emit('genResearch', selectedGenre)">
-                <option value="none"></option>
+                <option value="All">All Genres</option>
                 <option value="Rock">Rock</option>
                 <option value="Pop">Pop</option>
                 <option value="Jazz">Jazz</option>
@@ -47,7 +47,7 @@ export default {
     }
 
     select {
-        width: 80px;
+        width: 100px;
         text-align: center;
     }
 

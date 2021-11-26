@@ -1,6 +1,6 @@
 <template>
-    <div v-if="albumsToShow" class="albums_container">
-        <Albumcard v-for="(album, i) in albumsToShow" :key="`album_${i}`"
+    <div v-if="albums.length != 0" class="albums_container">
+        <Albumcard v-for="(album, i) in albums" :key="`album_${i}`"
             :poster="album.poster" :title="album.title" :subTitle="album.author" :year="album.year" :genre="album.genre"
         />
     </div>
@@ -16,10 +16,13 @@ export default {
         Albumcard,
         Loader,
     },
+    props: {
+        albums: Array,
+    },
     data() {
         return {
             storedAlbums: null,
-            albumsToShow: '',
+            // albumsToShow: '',
         };
     },
 }
