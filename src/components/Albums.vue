@@ -1,10 +1,10 @@
 <template>
-    <div v-if="albums.length != 0" class="albums_container">
+    <div v-if="albums.length > 0" class="albums_container">
         <Albumcard v-for="(album, i) in albums" :key="`album_${i}`"
             :poster="album.poster" :title="album.title" :subTitle="album.author" :year="album.year" :genre="album.genre"
         />
     </div>
-    <Loader v-else />
+    <Loader v-else-if="albums.length < 1" />
 </template>
 
 <script>
@@ -22,7 +22,6 @@ export default {
     data() {
         return {
             storedAlbums: null,
-            // albumsToShow: '',
         };
     },
 }

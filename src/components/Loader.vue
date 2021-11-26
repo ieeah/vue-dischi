@@ -55,9 +55,7 @@ export default {
     .lds-ripple {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
-  margin-block: 40px;
+  margin-block: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +63,8 @@ export default {
 .lds-ripple div {
   position: absolute;
   border: 4px solid white;
+  width: 80px;
+  height: 80px;
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1.8s cubic-bezier(0, 0.8, 0.2, 1) infinite;
@@ -75,17 +75,14 @@ export default {
 @keyframes lds-ripple {
   0% {
     opacity: 1;
-    width: 100px;
-    height: 100px;
+    transform: scale(1);
   }
   50% {
-    width: 0;
-    height: 0;
+        transform: scale(0);
     opacity: 0;
   }
   100% {
-    width: 100px;
-    height: 100px;
+    transform: scale(1);
     opacity: 1;
   }
 }
