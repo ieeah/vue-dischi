@@ -1,6 +1,8 @@
 <template>
   <header>
       <img class="brand_logo" src="@/assets/logo.png" alt="">
+
+
   </header>
 </template>
 
@@ -11,6 +13,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/globals.scss';
 @import '@/styles/vars.scss';
     header {
         background-color: $secondary-color;

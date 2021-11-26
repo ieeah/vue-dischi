@@ -2,7 +2,10 @@
   <div class="loader">
       <h2>I AM DOWNLOADING YOUR FAVOURITE ALBUMS!</h2>
       <div class="spinner">
-          <div class="lds-ripple"><div></div><div></div></div>
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
       </div>
       <h5>{{ loading_sentences[activeSentence] }}</h5>
   </div>
@@ -38,6 +41,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/globals.scss';
 @import '@/styles/vars.scss';
     .loader {
         display: flex;
@@ -54,31 +58,35 @@ export default {
   width: 80px;
   height: 80px;
   margin-block: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #fff;
+  border: 4px solid white;
   opacity: 1;
   border-radius: 50%;
-  animation: lds-ripple 1.55s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: lds-ripple 1.8s cubic-bezier(0, 0.8, 0.2, 1) infinite;
 }
 .lds-ripple div:nth-child(2) {
-  animation-delay: 0.5s;
+  animation-delay: .25s;
 }
 @keyframes lds-ripple {
   0% {
-    top: -15px;
-    left: 36px;
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  50% {
     width: 0;
     height: 0;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
-    top: 15px;
-    left: 0px;
-    width: 72px;
-    height: 72px;
-    opacity: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
   }
 }
 

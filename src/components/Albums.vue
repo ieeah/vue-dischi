@@ -23,7 +23,7 @@ export default {
         };
     },
     created() {
-        // this.getAlbums();
+        this.getAlbums();
     },
     methods: {
 
@@ -36,14 +36,12 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
+@import '@/styles/globals.scss';
 .albums_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 110px 70px;
-    height: calc(100vh - 66px);
-    width: 100vw;
 }
 
 </style>

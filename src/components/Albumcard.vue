@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/globals.scss';
 @import '@/styles/vars.scss';
 
 .wrapper {

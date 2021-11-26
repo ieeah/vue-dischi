@@ -27,6 +27,3 @@ export default {
     width: 100vw;
 }
 </style>
-
-
-// https://flynn.boolean.careers/exercises/api/array/music
